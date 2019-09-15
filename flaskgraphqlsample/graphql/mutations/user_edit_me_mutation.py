@@ -33,4 +33,3 @@ class EditProfileMeMutation(graphene.Mutation):
         return EditProfileMeMutation(
             user=user
         )
-

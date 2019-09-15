@@ -1,7 +1,5 @@
 from graphene_sqlalchemy import SQLAlchemyConnectionField as SQLAlchemyConnectionFieldBase
 
-from flaskgraphqlsample.decorators.auth import auth_required
-
 
 class SQLAlchemyConnectionField(SQLAlchemyConnectionFieldBase):
     DEFAULT_PAGE_SIZE = 10
@@ -10,7 +8,8 @@ class SQLAlchemyConnectionField(SQLAlchemyConnectionFieldBase):
     @classmethod
     def connection_resolver(cls, resolver, connection_type, model, root, info, **args):
         args = cls.validate_first_last(args)
-        return super(SQLAlchemyConnectionField, cls).connection_resolver(resolver, connection_type, model, root, info, **args)
+        return super(SQLAlchemyConnectionField, cls) \
+            .connection_resolver(resolver, connection_type, model, root, info, **args)
 
     @classmethod
     def validate_first_last(cls, args):

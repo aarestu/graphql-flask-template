@@ -22,7 +22,7 @@ def generate_random_data(count):
         user = User(email=p.email(), password="1234", date_created=date_created)
         user.set_password(user.password)
         db.session.add(user)
-        print_progress_bar(x+1, count, prefix='Progress:', suffix='Complete', length=50)
+        print_progress_bar(x + 1, count, prefix='Progress:', suffix='Complete', length=50)
         if x % 10 == 0:
             db.session.commit()
 

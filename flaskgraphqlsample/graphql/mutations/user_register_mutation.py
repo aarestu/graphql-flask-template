@@ -24,4 +24,3 @@ class RegisterUserMutation(graphene.Mutation):
         return RegisterUserMutation(
             user=User.query.filter(User.email == input.get("email")).first()
         )
-

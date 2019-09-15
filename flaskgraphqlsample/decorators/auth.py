@@ -1,14 +1,12 @@
 from functools import wraps
 
 from flask import request
-from flask_graphql_auth import verify_jwt_in_argument, get_jwt_identity
+from flask_graphql_auth import verify_jwt_in_argument
 from flask_graphql_auth.decorators import _extract_header_token_value
 from graphql import GraphQLError
-from jwt import PyJWTError
 
 
 def auth_required(role=None):
-
     def decorator(fn):
         """
         A decorator to protect a query resolver.

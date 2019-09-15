@@ -2,6 +2,7 @@ from flask.cli import AppGroup
 
 datadb_cli = None
 
+
 def init_cli(app):
     global datadb_cli
     datadb_cli = AppGroup('datadb')

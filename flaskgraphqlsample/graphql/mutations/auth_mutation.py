@@ -1,8 +1,7 @@
-import copy
-
 import graphene
 from flask_graphql_auth import create_access_token, create_refresh_token
 from graphql import GraphQLError
+
 from flaskgraphqlsample.models.user import User
 
 
